@@ -1,9 +1,14 @@
 import { Router } from "express";
-import { registerUser } from "../controllers/user.controller.js";
+import { AboutUser, registerUser } from "../controllers/user.controller.js";
 import {upload} from "../middelwares/multer.middelware.js"
 
 const router = Router();
-router.route("/").get(registerUser)
+
+
+router.route("/about").get(AboutUser)
+
+
+
 
 router.route("/register").post(
     upload.fields([

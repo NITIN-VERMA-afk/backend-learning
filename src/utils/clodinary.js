@@ -15,8 +15,9 @@ const uploadOnCloudinary = async (localFilePath) => {
       resource_type: "auto",
     });
     //file has been upload succes
-    console.log("file is upload on cloud",response.url);
-     return response
+    // console.log("file is upload on cloud",response.url);
+    fs.unlickSync(localFilePath)
+     return response;
   } catch (error) {
     fs.unlinkSync(localFilePath)//remove local tamp file as the upload op fails
     return null;
